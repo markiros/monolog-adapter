@@ -6,13 +6,14 @@
 
 namespace Bex\Monolog\Handler;
 
+use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
 use Bex\Monolog\Formatter\BitrixFormatter;
 
 /**
  * Monolog handler for the event log of Bitrix CMS.
- * 
+ *
  * @author Nik Samokhvalov <nik@samokhvalov.info>
  */
 class BitrixHandler extends AbstractProcessingHandler
@@ -38,7 +39,7 @@ class BitrixHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    protected function write(array $record)
+    protected function write(array $record): void
     {
         \CEventLog::Log(
             $record['formatted']['level'],
@@ -53,67 +54,67 @@ class BitrixHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    protected function getDefaultFormatter()
+    protected function getDefaultFormatter(): FormatterInterface
     {
         return new BitrixFormatter();
     }
 
     /**
      * Sets event type for log of Bitrix.
-     * 
+     *
      * @param string $event
      */
-    public function setEvent($event)
+    public function setEvent($event): void
     {
         $this->event = $event;
     }
 
     /**
      * Gets event type.
-     * 
+     *
      * @return string
      */
-    public function getEvent()
+    public function getEvent(): string
     {
         return $this->event;
     }
 
     /**
      * Sets module for log of Bitrix.
-     * 
+     *
      * @param string $module
      */
-    public function setModule($module)
+    public function setModule($module): void
     {
         $this->module = $module;
     }
 
     /**
      * Gets module.
-     * 
+     *
      * @return string
      */
-    public function getModule()
+    public function getModule(): string
     {
         return $this->module;
     }
 
     /**
      * Sets site ID for log of Bitrix.
-     * 
+     *
      * @param string $siteId
      */
-    public function setSite($siteId)
+    public function setSite($siteId): void
     {
         $this->siteId = $siteId;
     }
 
     /**
      * Gets site ID.
-     * 
+     *
      * @return string
      */
-    public function getSite()
+    public function getSite(): string
     {
         return $this->siteId;
     }
