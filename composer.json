@@ -21,7 +21,7 @@
   "require": {
     "php": ">=8.0",
     "monolog/monolog": "1.* || 2.* || 3.*",
-    "theorchard/monolog-cascade": "^1.0"
+    "theorchard/monolog-cascade": "0.*"
   },
   "autoload": {
     "psr-4": {"Bex\\Monolog\\": "src/"},
