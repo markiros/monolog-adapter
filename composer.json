@@ -1,5 +1,5 @@
 {
-  "name": "farit-slv/monolog-adapter",
+  "name": "markiros/monolog-adapter",
   "description": "Monolog adapter for Bitrix CMS",
   "keywords": ["bitrix", "monolog", "logger", "log", "psr-3"],
   "type": "library",
@@ -16,6 +16,10 @@
     {
       "name": "FaritSlv",
       "email": "faritslv@github.loc"
+    },
+    {
+      "name": "Mark Kim",
+      "email": "markiros@gmail.com"
     }
   ],
   "require": {

@@ -16,7 +16,7 @@
 Download the library using Composer:
 
 ```bash
-composer require farit-slv/monolog-adapter
+composer require markiros/monolog-adapter
 ```
 
 Write in the [`init.php`](https://dev.1c-bitrix.ru/learning/course/?COURSE_ID=43&LESSON_ID=2916) file:

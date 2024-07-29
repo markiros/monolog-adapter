@@ -112,9 +112,9 @@ class BitrixHandler extends AbstractProcessingHandler
     /**
      * Gets site ID.
      *
-     * @return string
+     * @return string|nullable
      */
-    public function getSite(): string
+    public function getSite(): ?string
     {
         return $this->siteId;
     }
