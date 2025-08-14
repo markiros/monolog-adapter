@@ -6,10 +6,11 @@
 
 namespace Bex\Monolog\Handler;
 
+use Bex\Monolog\Formatter\BitrixFormatter;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
-use Bex\Monolog\Formatter\BitrixFormatter;
+use Monolog\LogRecord;
 
 /**
  * Monolog handler for the event log of Bitrix CMS.
@@ -39,7 +40,7 @@ class BitrixHandler extends AbstractProcessingHandler
     /**
      * {@inheritdoc}
      */
-    protected function write(array $record): void
+    protected function write(LogRecord $record): void
     {
         \CEventLog::Log(
             $record['formatted']['level'],
@@ -112,7 +113,7 @@ class BitrixHandler extends AbstractProcessingHandler
     /**
      * Gets site ID.
      *
-     * @return string|nullable
+     * @return ?string
      */
     public function getSite(): ?string
     {

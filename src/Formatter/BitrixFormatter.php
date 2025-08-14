@@ -8,17 +8,18 @@ namespace Bex\Monolog\Formatter;
 
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Logger;
+use Monolog\LogRecord;
 
 /**
  * Record formatter for event log of Bitrix Control Panel.
- * 
- * Context of record will also be written to event log of Bitrix. You can specify ID of item for event log Bitrix 
+ *
+ * Context of record will also be written to event log of Bitrix. You can specify ID of item for event log Bitrix
  * through key `item_id` in the context of record:
- * 
+ *
  * ```php
  * $logger->error('message', array('item_id' => 21));
  * ```
- * 
+ *
  * @author Nik Samokhvalov <nik@samokhvalov.info>
  */
 class BitrixFormatter implements FormatterInterface
@@ -26,7 +27,7 @@ class BitrixFormatter implements FormatterInterface
     /**
      * {@inheritdoc}
      */
-    public function format(array $record)
+    public function format(LogRecord $record)
     {
         $record['item_id'] = null;
         $record['level'] = static::toBitrixLevel($record['level']);
